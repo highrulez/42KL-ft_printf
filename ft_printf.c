@@ -6,61 +6,54 @@
 /*   By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:57:54 by aawgku-o          #+#    #+#             */
-/*   Updated: 2023/11/07 02:55:29 by aawgku-o         ###   ########.fr       */
+/*   Updated: 2023/11/08 05:54:05 by aawgku-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	check_type(const char *word, void *arg)
+static int	checking(va_list args, const char words)
 {
-	int	length;
+	int	show_length;
 
-	length = 0;
-	if (*word == 'c')
-		length += ft_print_c((int)arg);
-	else if (*word == 's')
-		length += ft_print_s((char *)arg);
-	else if (*word == 'p')
-		length += ft_print_p((unsigned long)arg, 87);
-	else if (*word == 'd')
-		length += ft_print_d((int)arg);
-	else if (*word == 'i')
-		length += ft_print_d((int)arg);
-	else if (*word == 'u')
-		length += ft_print_u((unsigned int)arg);
-	else if (*word == 'x')
-		length += ft_print_x((unsigned int)arg, 87);
-	else if (*word == 'X')
-		length += ft_print_x((unsigned int)arg, 55);
-	return (length);
+	show_length = 0;
+	if (words == 'c')
+		show_length += ft_putchar(va_arg(args, int));
+	else if (words == 's')
+		show_length += ft_print_s(va_arg(args, char *));
+	else if (words == 'p')
+		show_length += ft_print_p(va_arg(args, unsigned long long));
+	else if (words == 'd' || words == 'i')
+		show_length += ft_print_d(va_arg(args, int));
+	else if (words == 'u')
+		show_length += ft_print_u(va_arg(args, unsigned int));
+	else if (words == 'x' || words == 'X')
+		show_length += ft_print_x(va_arg(args, unsigned int), words);
+	else if (words == '%')
+		show_length += percent();
+	return (show_length);
 }
 
-int	ft_printf(const char *word, ...)
+int	ft_printf(const char *str, ...)
 {
-	va_list			args;
-	unsigned int	i;
+	int		i;
+	va_list	args;
+	int		length;
 
 	i = 0;
-	va_start(args, word);
-	while (*word != '\0')
+	length = 0;
+	va_start(args, str);
+	while (str[i])
 	{
-		if (*word == '%')
+		if (str[i] == '%')
 		{
-			word++;
-			if (ft_strchr("cspdiuxX", *word))
-			{
-				i += check_type(word, va_arg(args, void *));
-			}
-			else if (*word == '%')
-			{
-				i += ft_putchar('%');
-			}
+			length += checking(args, str[i + 1]);
+			i++;
 		}
 		else
-			i = i + ft_putchar(*word);
-		word++;
+			length += ft_putchar(str[i]);
+		i++;
 	}
 	va_end(args);
-	return (i);
+	return (length);
 }
