@@ -6,7 +6,7 @@
 /*   By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:15:49 by aawgku-o          #+#    #+#             */
-/*   Updated: 2023/11/07 01:46:43 by aawgku-o         ###   ########.fr       */
+/*   Updated: 2023/11/08 04:22:38 by aawgku-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,12 @@
 
 int	ft_print_d(int n)
 {
-	int				nb;
-	unsigned int	i;
+	int		len;
+	char	*num;
 
-	nb = n;
-	i = 1;
-	if (n < 0 && n != -2147483648)
-	{
-		nb = -n;
-		i++;
-	}
-	while (nb > 9)
-	{
-		nb = nb / 10;
-		i++;
-	}
-	ft_putnbr_fd(n, 1);
-	if (n == -2147483648)
-		return (11);
-	return (i);
+	len = 0;
+	num = ft_itoa(n);
+	len = ft_print_s(num);
+	free(num);
+	return (len);
 }
