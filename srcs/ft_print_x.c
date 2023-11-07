@@ -6,55 +6,51 @@
 /*   By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:15:58 by aawgku-o          #+#    #+#             */
-/*   Updated: 2023/11/07 02:23:06 by aawgku-o         ###   ########.fr       */
+/*   Updated: 2023/11/08 04:19:30 by aawgku-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	*new_string(unsigned int value, int *strlen)
+int	ft_x_len(unsigned	int num)
 {
-	int				i;
-	unsigned int	temp;
-	char			*str;
+	int	len;
 
-	i = 0;
-	temp = value;
-	while (temp != 0)
+	len = 0;
+	while (num != 0)
 	{
-		temp = temp / 16;
-		i++;
+		len++;
+		num = num / 16;
 	}
-	str = calloc(i + 1, sizeof(char));
-	*strlen = i - 1;
-	return (str);
+	return (len);
 }
 
-int	ft_print_x(unsigned int value, int asc)
+void	ft_x(unsigned int num, const char format)
 {
-	unsigned int	tempval;
-	char			*output;
-	int				i;
-	int				*ptr;
-
-	ptr = &i;
-	tempval = value;
-	output = new_string(value, ptr);
-	if (!output)
-		return (0);
-	while (tempval != 0)
+	if (num >= 16)
 	{
-		if ((tempval % 16) < 10)
-			output[i] = (tempval % 16) + 48;
-		else
-			output[i] = (tempval % 16) + asc;
-		tempval = tempval / 16;
-		i--;
+		ft_x(num / 16, format);
+		ft_x(num % 16, format);
 	}
-	ft_putstr_fd(output, 1);
-	i = ft_strlen(output);
-	free(output);
-	if (value == 0)
-		i += ft_print_c('0');
-	return (i);
+	else
+	{
+		if (num <= 9)
+			ft_putchar_fd((num + '0'), 1);
+		else
+		{
+			if (format == 'x')
+				ft_putchar_fd((num - 10 + 'a'), 1);
+			if (format == 'X')
+				ft_putchar_fd((num - 10 + 'A'), 1);
+		}
+	}
+}
+
+int	ft_print_x(unsigned int num, const char format)
+{
+	if (num == 0)
+		return (write(1, "0", 1));
+	else
+		ft_x(num, format);
+	return (ft_x_len(num));
 }
