@@ -6,55 +6,54 @@
 /*   By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:15:39 by aawgku-o          #+#    #+#             */
-/*   Updated: 2023/11/07 01:57:15 by aawgku-o         ###   ########.fr       */
+/*   Updated: 2023/11/08 05:35:18 by aawgku-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	*new_string(unsigned long value, int *strlen)
+int	ptr_length(uintptr_t num)
 {
-	int				i;
-	unsigned long	temp;
-	char			*str;
+	int	len;
 
-	i = 0;
-	temp = value;
-	while (temp != 0)
+	len = 0;
+	while (num != 0)
 	{
-		temp = temp / 16;
-		i++;
+		len++;
+		num = num / 16;
 	}
-	str = calloc(i + 1, sizeof(char));
-	*strlen = i - 1;
-	return (str);
+	return (len);
 }
 
-int	ft_print_p(unsigned long value, int asc)
+void	putptr(uintptr_t num)
 {
-	unsigned long	tempv;
-	char			*output;
-	int				i;
-	int				*ptr;
-
-	ptr = &i;
-	tempv = value;
-	output = new_string(value, ptr);
-	if (!output)
-		return (0);
-	while (tempv != 0 && i-- >= 0)
+	if (num >= 16)
 	{
-		if ((tempv % 16) < 10)
-			output[i + 1] = (tempv % 16) + 48;
-		else
-			output[i + 1] = (tempv % 16) + asc;
-		tempv = tempv / 16;
+		putptr(num / 16);
+		putptr(num % 16);
 	}
-	i = ft_strlen(output);
-	i = i + ft_print_s("0x");
-	ft_putstr_fd(output, 1);
-	free(output);
-	if (value == 0)
-		i += ft_print_c('0');
-	return (i);
+	else
+	{
+		if (num <= 9)
+			ft_putchar_fd((num + '0'), 1);
+		else
+			ft_putchar_fd((num - 10 + 'a'), 1);
+	}
+}
+
+int	ft_print_p(unsigned long long ptr)
+{
+	int	length;
+
+	length = 0;
+	// length += write(1, "0x", 2);
+	if (ptr == 0)
+		length += write(1, PTRNULL, sizeof(PTRNULL) - 1);
+	else
+	{
+		length += write(1, "0x", 2);
+		putptr(ptr);
+		length += ptr_length(ptr);
+	}
+	return (length);
 }
