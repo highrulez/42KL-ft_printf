@@ -6,24 +6,38 @@
 /*   By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:15:53 by aawgku-o          #+#    #+#             */
-/*   Updated: 2023/11/07 02:00:40 by aawgku-o         ###   ########.fr       */
+/*   Updated: 2023/11/08 04:25:15 by aawgku-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_s(char *s)
+void	ft_putstr(char *str)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	if (!s)
+	while (str[i])
 	{
-		ft_putstr_fd("(null)", 1);
+		write(1, &str[i], 1);
+		i++;
+	}
+}
+
+int	ft_print_s(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (s == NULL)
+	{
+		ft_putstr("(null)");
 		return (6);
 	}
 	while (s[i])
+	{
+		write(1, &s[i], 1);
 		i++;
-	ft_putstr_fd(s, 1);
+	}
 	return (i);
 }
