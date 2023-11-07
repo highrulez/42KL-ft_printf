@@ -6,34 +6,57 @@
 /*   By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:15:56 by aawgku-o          #+#    #+#             */
-/*   Updated: 2023/11/07 02:18:34 by aawgku-o         ###   ########.fr       */
+/*   Updated: 2023/11/08 04:15:59 by aawgku-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	output(unsigned int nb)
+int	num_len(unsigned	int num)
 {
-	if (nb > 9)
-		ft_print_u(nb / 10);
-	if (nb <= 9)
+	int	len;
+
+	len = 0;
+	while (num != 0)
 	{
-		ft_putchar_fd(nb + 48, 1);
-		return ;
+		len++;
+		num = num / 10;
 	}
-	ft_putchar_fd((nb % 10) + 48, 1);
+	return (len);
 }
 
-int	ft_print_u(unsigned int nb)
+char	*ft_uitoa(unsigned int n)
 {
-	unsigned int	i;
+	char	*num;
+	int		len;
 
-	output(nb);
-	i = 1;
-	while (nb > 9)
+	len = num_len(n);
+	num = (char *)malloc(sizeof(char) * (len + 1));
+	if (!num)
+		return (0);
+	num[len] = '\0';
+	while (n != 0)
 	{
-		nb = nb / 10;
-		i++;
+		num[len - 1] = n % 10 + 48;
+		n = n / 10;
+		len--;
 	}
-	return (i);
+	return (num);
+}
+
+int	ft_print_u(unsigned int n)
+{
+	int		length;
+	char	*num;
+
+	length = 0;
+	if (n == 0)
+		length += write(1, "0", 1);
+	else
+	{
+		num = ft_uitoa(n);
+		length += ft_print_s(num);
+		free(num);
+	}
+	return (length);
 }
