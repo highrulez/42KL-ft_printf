@@ -6,7 +6,7 @@
 #    By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 15:54:04 by aawgku-o          #+#    #+#              #
-#    Updated: 2023/11/09 06:10:34 by aawgku-o         ###   ########.fr        #
+#    Updated: 2023/11/09 06:27:09 by aawgku-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,13 +73,13 @@ cleans:
 	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 30%"${DEF_COLOR}
 	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 40%"${DEF_COLOR}
 	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. █████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 50%"${DEF_COLOR}
-	@sleep 1.0 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 60%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 60%"${DEF_COLOR}
 	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ███████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 70%"${DEF_COLOR}
-	@sleep 1.0 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ███████████████████████████████▒▒▒▒▒▒▒▒▒ 80%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ███████████████████████████████▒▒▒▒▒▒▒▒▒ 80%"${DEF_COLOR}
 	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ███████████████████████████████████▒▒▒▒▒ 90%"${DEF_COLOR}
-	@sleep 1.0 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ████████████████████████████████████████ 100%"${DEF_COLOR}
-	@sleep 1.0 &&	echo -n "\r\033[K" 
-	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KDONE! ████████████████████████████████████████ 100%!\n"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ████████████████████████████████████████ 100%"${DEF_COLOR}
+	@sleep 0.2 &&	echo -n "\r\033[K" 
+	@sleep 0.1 &&	echo -n ${BLUE}"\r\033[KDONE! ████████████████████████████████████████ 100%!\n"${DEF_COLOR}
 	@echo ""
 
 
@@ -103,8 +103,8 @@ ffclean:
 	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ███████████████████████████████▒▒▒▒▒▒▒▒▒ 80%"${DEF_COLOR}
 	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ███████████████████████████████████▒▒▒▒▒ 90%"${DEF_COLOR}
 	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ████████████████████████████████████████ 100%"${DEF_COLOR}
-	@sleep 0.5 &&	echo -n "\r\033[K"
-	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KDONE! ████████████████████████████████████████ 100%!\n"${DEF_COLOR}
+	@sleep 0.2 &&	echo -n "\r\033[K"
+	@sleep 0.1 &&	echo -n ${MAGENTA}"\r\033[KDONE! ████████████████████████████████████████ 100%!\n"${DEF_COLOR}
 	@echo ""
 
 compiling:
