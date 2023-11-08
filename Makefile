@@ -6,9 +6,20 @@
 #    By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 15:54:04 by aawgku-o          #+#    #+#              #
-#    Updated: 2023/11/08 04:21:06 by aawgku-o         ###   ########.fr        #
+#    Updated: 2023/11/08 22:25:54 by aawgku-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+DEF_COLOR='\033[0;39m'
+BLACK='\033[0;30m'
+RED='\033[1;91m'
+GREEN='\033[1;92m'
+YELLOW='\033[0;93m'
+BLUE='\033[0;94m'
+MAGENTA='\033[0;95m'
+CYAN='\033[0;96m'
+GRAY='\033[0;90m'
+WHITE='\033[0;97m'
 
 NAME 		= libftprintf.a
 LIBFTNAME 	= libft.a
@@ -30,16 +41,49 @@ makelibft:
 			  @cp $(LIBFTDIR)/$(LIBFTNAME) .
 			  @mv $(LIBFTNAME) $(NAME)
 
-$(NAME): 	  makelibft $(OBJS)
+$(NAME): 	  compiling makelibft $(OBJS)
 			  @ar -rcs $(NAME) $(OBJS)
-			  @echo "All ft_printf files compiled successfully!"
+			  @echo ""
+			  @echo ${RED}"::::::::::: ::::::::::: ::: ::::::::       :::::::::   ::::::::  ::::    ::: :::::::::: :::"${DEF_COLOR}
+			  @echo ${RED}"    :+:         :+:     :+ :+:    :+:      :+:    :+: :+:    :+: :+:+:   :+: :+:        :+:"${DEF_COLOR}
+			  @echo ${RED}"    +:+         +:+        +:+             +:+    +:+ +:+    +:+ :+:+:+  +:+ +:+        +:+"${DEF_COLOR}
+			  @echo ${RED}"    +#+         +#+        +#++:++#++      +#+    +:+ +#+    +:+ +#+ +:+ +#+ +#++:++#   +#+"${DEF_COLOR}
+			  @echo ${RED}"    +#+         +#+               +#+      +#+    +#+ +#+    +#+ +#+  +#+#+# +#+        +#+"${DEF_COLOR}
+			  @echo ${RED}"    #+#         #+#        #+#    #+#      #+#    #+# #+#    #+# #+#   #+#+# #+#"${DEF_COLOR}
+			  @echo ${RED}"###########     ###         ########       #########   ########  ###    #### ########## ###"${DEF_COLOR}
+			  @echo "" 
 
-clean:
+clean:		  cleans
 			  @rm -f $(OBJS)
 			  @cd $(LIBFTDIR) && make clean
 	
-fclean: 	  clean
-			  @rm -f $(NAME)
+fclean: 	  cleans
+			  @rm -f $(NAME) $(OBJS)
 			  @cd $(LIBFTDIR) && make fclean
 	
 re: 		  fclean all
+
+cleans:
+	@echo ""
+	@echo ${BLUE}" ::::::::  :::        ::::::::::     :::     ::::    ::: ::::::::::: ::::    :::  ::::::::"${DEF_COLOR}
+	@echo ${BLUE}":+:    :+: :+:        :+:          :+: :+:   :+:+:   :+:     :+:     :+:+:   :+: :+:    :+:"${DEF_COLOR}
+	@echo ${BLUE}"+:+        +:+        +:+         +:+   +:+  :+:+:+  +:+     +:+     :+:+:+  +:+ +:+"${DEF_COLOR}
+	@echo ${CYAN}"+#+        +#+        +#++:++#   +#++:++#++: +#+ +:+ +#+     +#+     +#+ +:+ +#+ :#:"${DEF_COLOR}
+	@echo ${CYAN}"+#+        +#+        +#+        +#+     +#+ +#+  +#+#+#     +#+     +#+  +#+#+# +#+   +#+#"${DEF_COLOR}
+	@echo ${CYAN}" +#    #+# #+#        #+#        #+#     #+# #+#   #+#+#     #+#     #+#   #+#+# #+#    #+# #+# #+# #+"${DEF_COLOR}
+	@echo ${CYAN}" ########  ########## ########## ###     ### ###    #### ########### ###    ####  ########  ### ### ###"${DEF_COLOR}
+	@echo ""
+
+ffclean:
+	
+
+compiling:
+	@echo ""
+	@echo ${GREEN}" ::::::::   ::::::::  ::::    ::::  ::::::::: ::::::::::: :::        ::::::::::: ::::    :::  ::::::::"${DEF_COLOR}
+	@echo ${GREEN}":+:    :+: :+:    :+: +:+:+: :+:+:+ :+:    :+:    :+:     :+:            :+:     :+:+:   :+: :+:    :+:"${DEF_COLOR}
+	@echo ${GREEN}"+:+        +:+    +:+ +:+ +:+:+ +:+ +:+    +:+    +:+     +:+            +:+     :+:+:+  +:+ +:+"${DEF_COLOR}
+	@echo ${GREEN}"+#+        +#+    +#+ +#+  +:+  +#+ +#++:++#+     +#+     +#+            +#+     +#+ +:+ +#+ :#:"${DEF_COLOR}
+	@echo ${YELLOW}"+#+        +#+    +#+ +#+       +#+ +#+           +#+     +#+            +#+     +#+  +#+#+# +#+   +#+#"${DEF_COLOR}
+	@echo ${YELLOW}" +#    #+# #+#    #+# #+#       #+# #+#           #+#     #+#            #+#     #+#   #+#+# #+#    #+# #+# #+# #+"${DEF_COLOR}
+	@echo ${YELLOW}" ########   ########  ###       ### ###       ########### ########## ########### ###    ####  ########  ### ### ###"${DEF_COLOR}
+	@echo ""
