@@ -6,7 +6,7 @@
 #    By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 16:38:17 by aawgku-o          #+#    #+#              #
-#    Updated: 2023/11/07 02:36:31 by aawgku-o         ###   ########.fr        #
+#    Updated: 2023/11/08 22:59:08 by aawgku-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS			= 	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.
 
 OBJS			= $(SRCS:.c=.o)
 
-CC 				= gcc
+CC 				= cc
 CFLAGS			= -Wall -Wextra -Werror -I.
 RM				= rm -f
 
@@ -27,11 +27,9 @@ all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				@ar rcs $(NAME) $(OBJS)
-				@echo "all library is compiled!"
 
 clean:		
 				@$(RM) $(OBJS)
-				@echo "Object files are cleaned!"
 
 fclean:			clean
 				@$(RM) $(NAME)
