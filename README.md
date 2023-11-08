@@ -7,7 +7,8 @@ It is actually pretty cool :)</p>
 
 <h2>Testing</h2>
 <p>My ft_printf implementation passes all the tests conducted using Tripouille and Paulo-Santa's ft_printf tester. It's worth noting that my ft_printf project exclusively includes the mandatory parts and does not feature a BONUS section.</p>
-![20231109_071418](https://github.com/highrulez/ft_printf/assets/42662415/ceba2f3f-d346-463c-8912-143691f4527a)
+![20231109_071418](https://github.com/highrulez/ft_printf/assets/42662415/b4cb0f2c-723b-4a30-8608-9a080ddd85fb)
+
 
 <h2>Tested Machine</h2>
 <li>Linux (Ubuntu)</li>
