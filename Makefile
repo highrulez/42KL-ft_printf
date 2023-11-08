@@ -6,7 +6,7 @@
 #    By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 15:54:04 by aawgku-o          #+#    #+#              #
-#    Updated: 2023/11/08 23:59:04 by aawgku-o         ###   ########.fr        #
+#    Updated: 2023/11/09 02:49:37 by aawgku-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCS 		= ft_printf.c $(addprefix $(SRCSDIR)/, ft_print_c.c ft_print_d.c \
 			  percent.c)
 
 OBJS 		= $(SRCS:.c=.o)
+MAKEFLAGS 	+= --no-print-directory --silent
 
 .SILENT:
 
