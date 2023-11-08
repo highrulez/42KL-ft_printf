@@ -6,7 +6,7 @@
 #    By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 15:54:04 by aawgku-o          #+#    #+#              #
-#    Updated: 2023/11/09 02:49:37 by aawgku-o         ###   ########.fr        #
+#    Updated: 2023/11/09 03:55:51 by aawgku-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,7 +98,7 @@ compiling:
 	@echo ${YELLOW}" +#    #+# #+#    #+# #+#       #+# #+#           #+#     #+#            #+#     #+#   #+#+# #+#    #+# #+# #+# #+"${DEF_COLOR}
 	@echo ${YELLOW}" ########   ########  ###       ### ###       ########### ########## ########### ###    ####  ########  ### ### ###"${DEF_COLOR}
 	@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"███▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
+	@sleep 2 &&	echo ${MAGENTA}"███▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
 				@echo ""
 	@sleep 1 &&	echo ${MAGENTA}"████▒▒▒▒▒▒ 20%"${DEF_COLOR}
 				@echo ""
