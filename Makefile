@@ -6,7 +6,7 @@
 #    By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 15:54:04 by aawgku-o          #+#    #+#              #
-#    Updated: 2023/11/09 04:00:25 by aawgku-o         ###   ########.fr        #
+#    Updated: 2023/11/09 04:02:46 by aawgku-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,14 +100,16 @@ compiling:
 	@echo ""
 	@sleep 2 &&	echo ${MAGENTA}"█ 10%"${DEF_COLOR}
 				@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"██ 20%"${DEF_COLOR}
+	@sleep 2 &&	echo ${MAGENTA}"██ 20%"${DEF_COLOR}
 				@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"███ 40%"${DEF_COLOR}
+	@sleep 2 &&	echo ${MAGENTA}"███ 40%"${DEF_COLOR}
 				@echo ""
 	@sleep 3 &&	echo ${MAGENTA}"████ 55%"${DEF_COLOR}
 				@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"█████ 70%"${DEF_COLOR}
+	@sleep 2 &&	echo ${MAGENTA}"█████ 70%"${DEF_COLOR}
 				@echo ""
-	@sleep 3 &&	echo ${MAGENTA}"███████ 90%"${DEF_COLOR}
+	@sleep 3 &&	echo ${MAGENTA}"███████ 80%"${DEF_COLOR}
 				@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"██████████ 100%"${DEF_COLOR}
+	@sleep 3 &&	echo ${MAGENTA}"█████████ 90%"${DEF_COLOR}
+				@echo ""
+	@sleep 2 &&	echo ${MAGENTA}"██████████ 100%"${DEF_COLOR}
