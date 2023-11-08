@@ -6,7 +6,7 @@
 #    By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 15:54:04 by aawgku-o          #+#    #+#              #
-#    Updated: 2023/11/09 04:13:55 by aawgku-o         ###   ########.fr        #
+#    Updated: 2023/11/09 04:16:57 by aawgku-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -118,4 +118,4 @@ compiling:
 				@echo ""	
 	@sleep 1 &&	echo ${MAGENTA}"█████████▒ 90%"${DEF_COLOR}
 				@echo ""
-	@sleep 3 &&	echo ${MAGENTA}"██████████ 100%"${DEF_COLOR}
+	@sleep 2 &&	echo ${MAGENTA}"██████████ 100%"${DEF_COLOR}
