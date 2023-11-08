@@ -6,7 +6,7 @@
 #    By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 15:54:04 by aawgku-o          #+#    #+#              #
-#    Updated: 2023/11/09 06:37:38 by aawgku-o         ###   ########.fr        #
+#    Updated: 2023/11/09 06:38:30 by aawgku-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ MAKEFLAGS 	+= --no-print-directory --silent
 
 .SILENT:
 
-all: 		  mak$(NAME)
+all: 		  $(NAME)
 
 makelibft:
 			  @make -C $(LIBFTDIR)
