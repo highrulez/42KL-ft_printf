@@ -6,17 +6,19 @@
 /*   By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:15:56 by aawgku-o          #+#    #+#             */
-/*   Updated: 2023/11/08 04:15:59 by aawgku-o         ###   ########.fr       */
+/*   Updated: 2023/11/09 00:48:29 by aawgku-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	num_len(unsigned	int num)
+int	num_len(unsigned int num)
 {
 	int	len;
 
 	len = 0;
+	if (num == 0)
+		len = 1;
 	while (num != 0)
 	{
 		len++;
@@ -27,19 +29,19 @@ int	num_len(unsigned	int num)
 
 char	*ft_uitoa(unsigned int n)
 {
-	char	*num;
 	int		len;
+	char	*num;
 
 	len = num_len(n);
 	num = (char *)malloc(sizeof(char) * (len + 1));
 	if (!num)
-		return (0);
+		return (NULL);
 	num[len] = '\0';
 	while (n != 0)
 	{
-		num[len - 1] = n % 10 + 48;
-		n = n / 10;
 		len--;
+		num[len] = n % 10 + 48;
+		n = n / 10;
 	}
 	return (num);
 }
@@ -51,7 +53,9 @@ int	ft_print_u(unsigned int n)
 
 	length = 0;
 	if (n == 0)
+	{
 		length += write(1, "0", 1);
+	}
 	else
 	{
 		num = ft_uitoa(n);
