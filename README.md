@@ -4,4 +4,4 @@
 The goal of this project is pretty straightforward. You will recode printf().
 You will mainly learn about using a variable number of arguments. How cool is that??
 It is actually pretty cool :)</p>
-<center><a href="https://ibb.co/B3TXd0K"><img src="https://i.ibb.co/QQY2zyj/298647878-429956952484382-6992748080323170353-n.jpg" alt="298647878-429956952484382-6992748080323170353-n" border="0" /></a></center>
+<center><a href="https://ibb.co/z6n5MZn"><img src="https://i.ibb.co/nPg0Gjg/20231109-071418.gif" alt="20231109-071418" border="0" /></a></center>
