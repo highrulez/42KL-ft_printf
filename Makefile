@@ -6,7 +6,7 @@
 #    By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 15:54:04 by aawgku-o          #+#    #+#              #
-#    Updated: 2023/11/08 22:51:13 by aawgku-o         ###   ########.fr        #
+#    Updated: 2023/11/08 23:59:04 by aawgku-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,8 @@ SRCS 		= ft_printf.c $(addprefix $(SRCSDIR)/, ft_print_c.c ft_print_d.c \
 			  percent.c)
 
 OBJS 		= $(SRCS:.c=.o)
+
+.SILENT:
 
 all: 		  $(NAME)
 
@@ -95,3 +97,18 @@ compiling:
 	@echo ${YELLOW}" +#    #+# #+#    #+# #+#       #+# #+#           #+#     #+#            #+#     #+#   #+#+# #+#    #+# #+# #+# #+"${DEF_COLOR}
 	@echo ${YELLOW}" ########   ########  ###       ### ###       ########### ########## ########### ###    ####  ########  ### ### ###"${DEF_COLOR}
 	@echo ""
+	@sleep 1 &&	echo ${MAGENTA}"███▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
+				@echo ""
+	@sleep 1 &&	echo ${MAGENTA}"████▒▒▒▒▒▒ 20%"${DEF_COLOR}
+				@echo ""
+	@sleep 1 &&	echo ${MAGENTA}"█████▒▒▒▒▒ 30%"${DEF_COLOR}
+				@echo ""
+	@sleep 1 &&	echo ${MAGENTA}"██████▒▒▒▒ 50%"${DEF_COLOR}
+				@echo ""
+	@sleep 1 &&	echo ${MAGENTA}"███████▒▒▒ 60%"${DEF_COLOR}
+				@echo ""
+	@sleep 1 &&	echo ${MAGENTA}"████████▒▒ 80%"${DEF_COLOR}
+				@echo ""
+	@sleep 1 &&	echo ${MAGENTA}"█████████▒ 95%"${DEF_COLOR}
+				@echo ""
+	@sleep 1 &&	echo ${MAGENTA}"██████████ 100%"${DEF_COLOR}
