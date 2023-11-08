@@ -6,7 +6,7 @@
 #    By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 15:54:04 by aawgku-o          #+#    #+#              #
-#    Updated: 2023/11/09 04:16:57 by aawgku-o         ###   ########.fr        #
+#    Updated: 2023/11/09 05:54:52 by aawgku-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCS 		= ft_printf.c $(addprefix $(SRCSDIR)/, ft_print_c.c ft_print_d.c \
 			  percent.c)
 
 OBJS 		= $(SRCS:.c=.o)
+
 MAKEFLAGS 	+= --no-print-directory --silent
 
 .SILENT:
@@ -44,23 +45,14 @@ makelibft:
 			  @cp $(LIBFTDIR)/$(LIBFTNAME) .
 			  @mv $(LIBFTNAME) $(NAME)
 
-$(NAME): 	  compiling makelibft $(OBJS)
+$(NAME): 	  compiling makelibft clear_lines complete $(OBJS)
 			  @ar -rcs $(NAME) $(OBJS)
-			  @echo ""
-			  @echo ${RED}"::::::::::: ::::::::::: ::: ::::::::       :::::::::   ::::::::  ::::    ::: :::::::::: :::"${DEF_COLOR}
-			  @echo ${RED}"    :+:         :+:     :+ :+:    :+:      :+:    :+: :+:    :+: :+:+:   :+: :+:        :+:"${DEF_COLOR}
-			  @echo ${RED}"    +:+         +:+        +:+             +:+    +:+ +:+    +:+ :+:+:+  +:+ +:+        +:+"${DEF_COLOR}
-			  @echo ${RED}"    +#+         +#+        +#++:++#++      +#+    +:+ +#+    +:+ +#+ +:+ +#+ +#++:++#   +#+"${DEF_COLOR}
-			  @echo ${RED}"    +#+         +#+               +#+      +#+    +#+ +#+    +#+ +#+  +#+#+# +#+        +#+"${DEF_COLOR}
-			  @echo ${RED}"    #+#         #+#        #+#    #+#      #+#    #+# #+#    #+# #+#   #+#+# #+#"${DEF_COLOR}
-			  @echo ${RED}"###########     ###         ########       #########   ########  ###    #### ########## ###"${DEF_COLOR}
-			  @echo "" 
 
-clean:		  cleans
+clean:		  clear_lines cleans
 			  @rm -f $(OBJS)
 			  @cd $(LIBFTDIR) && make clean
 	
-fclean: 	  ffclean
+fclean: 	  clear_lines ffclean
 			  @rm -f $(NAME) $(OBJS)
 			  @cd $(LIBFTDIR) && make fclean
 	
@@ -68,6 +60,18 @@ re: 		  fclean all
 
 cleans:
 	@echo ""
+	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 0%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 20%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 30%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 40%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. █████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 50%"${DEF_COLOR}
+	@sleep 1.0 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 60%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ███████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 70%"${DEF_COLOR}
+	@sleep 1.0 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ███████████████████████████████▒▒▒▒▒▒▒▒▒ 80%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ███████████████████████████████████▒▒▒▒▒ 90%"${DEF_COLOR}
+	@sleep 2.0 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ████████████████████████████████████████ 100%"${DEF_COLOR}
+	@sleep 1.0 &&	echo -n "\r\033[K" 
 	@echo ${BLUE}" ::::::::  :::        ::::::::::     :::     ::::    ::: ::::::::::: ::::    :::  ::::::::"${DEF_COLOR}
 	@echo ${BLUE}":+:    :+: :+:        :+:          :+: :+:   :+:+:   :+:     :+:     :+:+:   :+: :+:    :+:"${DEF_COLOR}
 	@echo ${BLUE}"+:+        +:+        +:+         +:+   +:+  :+:+:+  +:+     +:+     :+:+:+  +:+ +:+"${DEF_COLOR}
@@ -79,6 +83,18 @@ cleans:
 
 ffclean:
 	@echo ""
+	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 0%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 20%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 30%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 40%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. █████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 50%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 60%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ███████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 70%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ███████████████████████████████▒▒▒▒▒▒▒▒▒ 80%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ███████████████████████████████████▒▒▒▒▒ 90%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ████████████████████████████████████████ 100%"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n "\r\033[K" 
 	@echo ${MAGENTA}":::::::::: ::::::::  :::        ::::::::::     :::     ::::    :::         "
 	@echo ${MAGENTA}":+:       :+:    :+: :+:        :+:          :+: :+:   :+:+:   :+:         "
 	@echo ${MAGENTA}"+:+       +:+        +:+        +:+         +:+   +:+  :+:+:+  +:+         "
@@ -98,24 +114,31 @@ compiling:
 	@echo ${YELLOW}" +#    #+# #+#    #+# #+#       #+# #+#           #+#     #+#            #+#     #+#   #+#+# #+#    #+# #+# #+# #+"${DEF_COLOR}
 	@echo ${YELLOW}" ########   ########  ###       ### ###       ########### ########## ########### ###    ####  ########  ### ### ###"${DEF_COLOR}
 	@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"▒▒▒▒▒▒▒▒▒▒ 0%"${DEF_COLOR}
-				@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"█▒▒▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
-				@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"██▒▒▒▒▒▒▒▒ 20%"${DEF_COLOR}
-				@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"███▒▒▒▒▒▒▒ 30%"${DEF_COLOR}
-				@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"████▒▒▒▒▒▒ 40%"${DEF_COLOR}
-				@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"█████▒▒▒▒▒ 50%"${DEF_COLOR}
-				@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"██████▒▒▒▒ 60%"${DEF_COLOR}
-				@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"███████▒▒▒ 70%"${DEF_COLOR}
-				@echo ""
-	@sleep 1 &&	echo ${MAGENTA}"████████▒▒ 80%"${DEF_COLOR}
-				@echo ""	
-	@sleep 1 &&	echo ${MAGENTA}"█████████▒ 90%"${DEF_COLOR}
-				@echo ""
-	@sleep 2 &&	echo ${MAGENTA}"██████████ 100%"${DEF_COLOR}
+	@sleep 1 &&	echo -n ${GREEN}"\r\033[KPlease Wait.. ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 0%"${DEF_COLOR}
+	@sleep 1 &&	echo -n ${GREEN}"\r\033[KPlease Wait.. █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
+	@sleep 1 &&	echo -n ${GREEN}"\r\033[KPlease Wait.. ████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 20%"${DEF_COLOR}
+	@sleep 1 &&	echo -n ${GREEN}"\r\033[KPlease Wait.. ███████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 30%"${DEF_COLOR}
+	@sleep 1 &&	echo -n ${GREEN}"\r\033[KPlease Wait.. ██████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 40%"${DEF_COLOR}
+	@sleep 1 &&	echo -n ${GREEN}"\r\033[KPlease Wait.. █████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 50%"${DEF_COLOR}
+	@sleep 1 &&	echo -n ${GREEN}"\r\033[KPlease Wait.. ████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 60%"${DEF_COLOR}
+	@sleep 1 &&	echo -n ${GREEN}"\r\033[KPlease Wait.. ███████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 70%"${DEF_COLOR}
+	@sleep 1 &&	echo -n ${GREEN}"\r\033[KPlease Wait.. ███████████████████████████████▒▒▒▒▒▒▒▒▒ 80%"${DEF_COLOR}
+	@sleep 1 &&	echo -n ${GREEN}"\r\033[KPlease Wait.. ███████████████████████████████████▒▒▒▒▒ 90%"${DEF_COLOR}
+	@sleep 2 &&	echo -n ${GREEN}"\r\033[KPlease Wait.. ████████████████████████████████████████ 100%"${DEF_COLOR}
+	@sleep 1 &&	echo -n "\r\033[K"
+
+complete:
+	@echo ""
+	@echo ${RED}" ::::::::   ::::::::  ::::    ::::  :::::::::  :::        :::::::::: ::::::::::: :::::::::: ::: "${DEF_COLOR}
+	@echo ${RED}":+:    :+: :+:    :+: +:+:+: :+:+:+ :+:    :+: :+:        :+:            :+:     :+:        :+: "${DEF_COLOR}
+	@echo ${RED}"+:+        +:+    +:+ +:+ +:+:+ +:+ +:+    +:+ +:+        +:+            +:+     +:+        +:+ "${DEF_COLOR}
+	@echo ${RED}"+#+        +#+    +#+ +#+  +:+  +#+ +#++:++#+  +#+        +#++:++#       +#+     +#++:++#   +#+ "${DEF_COLOR}
+	@echo ${RED}"+#+        +#+    +#+ +#+       +#+ +#+        +#+        +#+            +#+     +#+        +#+ "${DEF_COLOR}
+	@echo ${RED}"#+#    #+# #+#    #+# #+#       #+# #+#        #+#        #+#            #+#     #+#            "${DEF_COLOR}
+	@echo ${RED}" ########   ########  ###       ### ###        ########## ##########     ###     ########## ### "${DEF_COLOR}
+	@echo ""
+
+clear_lines:
+	@echo -e "\033[2J"
+	@echo -e "\033[H"
+	@tput clear || printf "\033c"
