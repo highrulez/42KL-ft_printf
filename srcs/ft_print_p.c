@@ -6,7 +6,7 @@
 /*   By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:15:39 by aawgku-o          #+#    #+#             */
-/*   Updated: 2023/11/08 05:35:18 by aawgku-o         ###   ########.fr       */
+/*   Updated: 2023/11/09 04:13:06 by aawgku-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_print_p(unsigned long long ptr)
 	length = 0;
 	// length += write(1, "0x", 2);
 	if (ptr == 0)
-		length += write(1, PTRNULL, sizeof(PTRNULL) - 1);
+		length += write(1, PTR0, sizeof(PTR0) - 1);
 	else
 	{
 		length += write(1, "0x", 2);

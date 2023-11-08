@@ -6,7 +6,7 @@
 /*   By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:55:23 by aawgku-o          #+#    #+#             */
-/*   Updated: 2023/11/08 05:45:03 by aawgku-o         ###   ########.fr       */
+/*   Updated: 2023/11/09 04:13:03 by aawgku-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 # include <stdint.h> // uintmax_t
 
 # if defined (__linux__)
-#  define PTRNULL "(nil)"
+#  define PTR0 "(nil)"
 # elif defined (__APPLE__)
-#  define PTRNULL "0x0"
+#  define PTR0 "0x0"
 # endif
 
 int	ft_printpercent(void);
