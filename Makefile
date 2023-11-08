@@ -6,7 +6,7 @@
 #    By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 15:54:04 by aawgku-o          #+#    #+#              #
-#    Updated: 2023/11/09 06:02:55 by aawgku-o         ###   ########.fr        #
+#    Updated: 2023/11/09 06:10:34 by aawgku-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,13 @@ fclean: 	  clear_lines ffclean
 re: 		  fclean all
 
 cleans:
+	@echo ${BLUE}" ::::::::  :::        ::::::::::     :::     ::::    ::: ::::::::::: ::::    :::  ::::::::              "${DEF_COLOR}
+	@echo ${BLUE}":+:    :+: :+:        :+:          :+: :+:   :+:+:   :+:     :+:     :+:+:   :+: :+:    :+:             "${DEF_COLOR}
+	@echo ${BLUE}":+:        +:+        +:+         +:+   +:+  :+:+:+  +:+     +:+     :+:+:+  +:+ +:+                    "${DEF_COLOR}
+	@echo ${BLUE}"+#+        +#+        +#++:++#   +#++:++#++: +#+ +:+ +#+     +#+     +#+ +:+ +#+ :#:                    "${DEF_COLOR}
+	@echo ${CYAN}"+#+        +#+        +#+        +#+     +#+ +#+  +#+#+#     +#+     +#+  +#+#+# +#+   +#+#             "${DEF_COLOR}
+	@echo ${CYAN}"#+#    #+# #+#        #+#        #+#     #+# #+#   #+#+#     #+#     #+#   #+#+# #+#    #+# #+# #+# #+# "${DEF_COLOR}
+	@echo ${CYAN}" ########  ########## ########## ###     ### ###    #### ########### ###    ####  ########  ### ### ###  "${DEF_COLOR}
 	@echo ""
 	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 0%"${DEF_COLOR}
 	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
@@ -70,18 +77,20 @@ cleans:
 	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ███████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 70%"${DEF_COLOR}
 	@sleep 1.0 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ███████████████████████████████▒▒▒▒▒▒▒▒▒ 80%"${DEF_COLOR}
 	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ███████████████████████████████████▒▒▒▒▒ 90%"${DEF_COLOR}
-	@sleep 2.0 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ████████████████████████████████████████ 100%"${DEF_COLOR}
+	@sleep 1.0 &&	echo -n ${BLUE}"\r\033[KCleaning in progress.. ████████████████████████████████████████ 100%"${DEF_COLOR}
 	@sleep 1.0 &&	echo -n "\r\033[K" 
-	@echo ${BLUE}" ::::::::  :::        ::::::::::     :::     ::::    ::: :::"${DEF_COLOR}
-	@echo ${BLUE}":+:    :+: :+:        :+:          :+: :+:   :+:+:   :+: :+:"${DEF_COLOR}
-	@echo ${BLUE}":+:        +:+        +:+         +:+   +:+  :+:+:+  +:+ :+"${DEF_COLOR}
-	@echo ${BLUE}"+#+        +#+        +#++:++#   +#++:++#++: +#+ +:+ +#+ +#+"${DEF_COLOR}
-	@echo ${CYAN}"+#+        +#+        +#+        +#+     +#+ +#+  +#+#+# +#+"${DEF_COLOR}
-	@echo ${CYAN}"#+#    #+# #+#        #+#        #+#     #+# #+#   #+#+#"${DEF_COLOR}
-	@echo ${CYAN}" ########  ########## ########## ###     ### ###    #### ###"${DEF_COLOR}
+	@sleep 0.5 &&	echo -n ${BLUE}"\r\033[KDONE! ████████████████████████████████████████ 100%!\n"${DEF_COLOR}
 	@echo ""
 
+
 ffclean:
+	@echo ${MAGENTA}":::::::::: ::::::::  :::        ::::::::::     :::     ::::    :::         "
+	@echo ${MAGENTA}":+:       :+:    :+: :+:        :+:          :+: :+:   :+:+:   :+:         "
+	@echo ${MAGENTA}"+:+       +:+        +:+        +:+         +:+   +:+  :+:+:+  +:+         "
+	@echo ${MAGENTA}":#::+::#  +#+        +#+        +#++:++#   +#++:++#++: +#+ +:+ +#+         "
+	@echo ${GRAY}"+#+       +#+        +#+        +#+        +#+     +#+ +#+  +#+#+#         "
+	@echo ${GRAY}"#+#       #+#    #+# #+#        #+#        #+#     #+# #+#   #+#+# #+# #+# "
+	@echo ${GRAY}"###        ########  ########## ########## ###     ### ###    #### ### ###  "
 	@echo ""
 	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 0%"${DEF_COLOR}
 	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. █████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 10%"${DEF_COLOR}
@@ -94,14 +103,8 @@ ffclean:
 	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ███████████████████████████████▒▒▒▒▒▒▒▒▒ 80%"${DEF_COLOR}
 	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ███████████████████████████████████▒▒▒▒▒ 90%"${DEF_COLOR}
 	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KCleaning in progress.. ████████████████████████████████████████ 100%"${DEF_COLOR}
-	@sleep 0.5 &&	echo -n "\r\033[K" 
-	@echo ${MAGENTA}":::::::::: ::::::::  :::        ::::::::::     :::     ::::    :::         "
-	@echo ${MAGENTA}":+:       :+:    :+: :+:        :+:          :+: :+:   :+:+:   :+:         "
-	@echo ${MAGENTA}"+:+       +:+        +:+        +:+         +:+   +:+  :+:+:+  +:+         "
-	@echo ${MAGENTA}":#::+::#  +#+        +#+        +#++:++#   +#++:++#++: +#+ +:+ +#+         "
-	@echo ${GRAY}"+#+       +#+        +#+        +#+        +#+     +#+ +#+  +#+#+#         "
-	@echo ${GRAY}"#+#       #+#    #+# #+#        #+#        #+#     #+# #+#   #+#+# #+# #+# "
-	@echo ${GRAY}"###        ########  ########## ########## ###     ### ###    #### ### ###  "
+	@sleep 0.5 &&	echo -n "\r\033[K"
+	@sleep 0.5 &&	echo -n ${MAGENTA}"\r\033[KDONE! ████████████████████████████████████████ 100%!\n"${DEF_COLOR}
 	@echo ""
 
 compiling:
