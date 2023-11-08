@@ -6,7 +6,7 @@
 #    By: aawgku-o <aawgku-o@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 15:54:04 by aawgku-o          #+#    #+#              #
-#    Updated: 2023/11/08 22:25:54 by aawgku-o         ###   ########.fr        #
+#    Updated: 2023/11/08 22:51:13 by aawgku-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ clean:		  cleans
 			  @rm -f $(OBJS)
 			  @cd $(LIBFTDIR) && make clean
 	
-fclean: 	  cleans
+fclean: 	  ffclean
 			  @rm -f $(NAME) $(OBJS)
 			  @cd $(LIBFTDIR) && make fclean
 	
@@ -75,7 +75,15 @@ cleans:
 	@echo ""
 
 ffclean:
-	
+	@echo ""
+	@echo ${MAGENTA}":::::::::: ::::::::  :::        ::::::::::     :::     ::::    :::         "
+	@echo ${MAGENTA}":+:       :+:    :+: :+:        :+:          :+: :+:   :+:+:   :+:         "
+	@echo ${MAGENTA}"+:+       +:+        +:+        +:+         +:+   +:+  :+:+:+  +:+         "
+	@echo ${MAGENTA}":#::+::#  +#+        +#+        +#++:++#   +#++:++#++: +#+ +:+ +#+         "
+	@echo ${GRAY}"+#+       +#+        +#+        +#+        +#+     +#+ +#+  +#+#+#         "
+	@echo ${GRAY}"#+#       #+#    #+# #+#        #+#        #+#     #+# #+#   #+#+# #+# #+# "
+	@echo ${GRAY}"###        ########  ########## ########## ###     ### ###    #### ### ###  "
+	@echo ""
 
 compiling:
 	@echo ""
