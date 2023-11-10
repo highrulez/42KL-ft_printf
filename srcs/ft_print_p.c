@@ -46,7 +46,6 @@ int	ft_print_p(unsigned long long ptr)
 	int	length;
 
 	length = 0;
-	// length += write(1, "0x", 2);
 	if (ptr == 0)
 		length += write(1, PTR0, sizeof(PTR0) - 1);
 	else
