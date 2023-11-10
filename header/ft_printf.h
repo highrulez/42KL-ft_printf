@@ -19,9 +19,9 @@
 # include <stdlib.h> // malloc, free
 # include <stdint.h> // uintmax_t
 
-# if defined (__linux__)
+# if defined(__linux__)
 #  define PTR0 "(nil)"
-# elif defined (__APPLE__)
+# elif defined(__APPLE__)
 #  define PTR0 "0x0"
 # endif
 
