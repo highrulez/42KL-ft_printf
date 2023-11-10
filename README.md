@@ -13,4 +13,3 @@ It is actually pretty cool :)</p>
 
 <h2>Tested Machine</h2>
 <li>Linux (Ubuntu)</li>
-<li>macOS</li>
